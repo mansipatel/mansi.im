@@ -1,0 +1,117 @@
+/* Space out content a bit */
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+    border-bottom: 1px solid #e5e5e5;
+    background-image: url(http://shivampatel.net/images/banners/banner2.jpg);
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+    .container {
+        max-width: 800px;
+    }
+}
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    /* Remove the padding we set earlier */
+    .header,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+        height: 200px;
+    }
+}
+/*   CSS additions by ME   */
+
+/* Full background image*/
+
+.display-image {
+    float: right;
+    width:180px;
+    height:310px;
+    background-image: url("images/mansi_patel.jpg");
+    background-size:180px 441px;
+    -webkit-border-radius: 70px 20px 69px 20px;
+    -moz-border-radius: 70px 20px 69px 20px;
+    border-radius: 35px 20px 35px 20px;
+    border:2px solid #CCCCCC;
+    background-color:#FFFFFF;
+    -webkit-box-shadow: #e4e4e4 7px 7px 7px;
+    -moz-box-shadow: #eaeaea 7px 7px 7px;
+    box-shadow: #e4e4e4 7px 7px 7px;
+	margin-bottom: 10px;
+}
+
+.intro a {
+    color: #8C1919;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px dotted #A5E410;
+}
+
+/* Custom style for the home page navigation pills (nav) */
+.nav-custom-style{
+    padding-top: 0px;
+
+    background-color: #000;
+    opacity: 0.75;
+    font-weight:bold;
+}
+.nav-custom-style li a{
+    color:white;
+}
+
+.nav-custom-style li a:hover{
+    background-color:#555;
+    color: white;
+}
+
+#header-pic-shadow{
+    padding-top: 30px;
+    background-image: url(images/shadow.png);
+    background-repeat:no-repeat;
+    background-position:bottom;
+}
+
+#header-pic-description{
+    background-image: url(images/home-page-pic-mask.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 160px;
+    opacity: 0.8;
+}

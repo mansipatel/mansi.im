@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href=""> <!--CHECK put favicon here -->
+    <title>Python Server</title>
+   <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="custom.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+ </head>
+
+<body>
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../"><b>Home</b></a></li>
+            <li><a href="../resume/"><b>Resume</b></a></li> 
+            <!-- <li><a href="index.htm"><b>Blogs</b></a></li>             -->
+
+             <li  class = "active" class="dropdown">
+              <a href="/index.htm" class="dropdown-toggle" data-toggle="dropdown"><b>Blogs</b> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href= "python-web-server.htm"><b>Python web server hosting this website</b></a></li>
+                <li><a href="how-new-gmail-enhancement-of-picture-display-enables-email-read-recepits.htm "><b>Inline display of images in gmail</b></a></li>
+                <!-- <li><a href="index.htm"><b>Man-in-the-middle</b></a></li> -->
+            </li>
+          </ul>
+         </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+<div class ="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2 id="multitheaded-simple-python-server">Multithreaded-Simple-Python-Server</h2>
+<hr/>
+      <p>This website is currently running on an <em>experimental</em>, <em>minimilistic</em> yet <em>multi-threaded</em> web server written in python.</p>
+      <p>While getting my hands dirty with socket programming for the first time, I started off with a simple web server. This server can serve all the GET requests received at the port it is listening at. This is real good to work with the static websites which have substantially less number of requests per page to travel through the network. Even in case of concurrent requests this server can fairly perform by serving all the queued requests.</p>
+
+      <p>This code imports only the <em>socket</em> module:</p>
+      
+      <script
+	 <script src="https://gist.github.com/mansipatel/9ba9d3cc0425e9138c92.js"></script>
+</script>
+
+<p>Watching this simple code working fine intrigued me to include<a href = "http://en.wikipedia.org/wiki/Thread_%28computing%29"> <em>threads</em></a> in the same code. The performance of the same old server increased hugely. I decide to enhance the same code to write a dedicated server to host my personal website <a href="http://mansi.im">mansi.im</a>. The new server is extended with the following features:</p>
+<ul>
+<li>multi-threaded</li>
+<li>logs all the incoming requests in a log file pythonServer.log</li>
+<li>checks for <a href="http://en.wikipedia.org/wiki/Directory_traversal_attack">directory traversal</a></li>
+<li>prepends an HTML message in every response which specifies the time taken to generate each response in µs</li>
+</ul>
+<p> Even this server uses only <em>socket</em> module for <em>network programming</em> and multi-threading is implemented with <em>thread</em> module:</p>
+
+<script
+   <script src="https://gist.github.com/mansipatel/7b150078c0b9363825bd.js"></script>
+</script>
+
+<h2 id="log-file">Log file</h2>
+<p>The log file is created using <em>log_requests(r, c)</em>. The incoming requests are logged in a file named pythonServer.log in the following format:</p>
+<pre><code class="lang-sh">[Date and Time] [Request sent by the client] [IP address of client] [User-Agent]
+</code></pre>
+<h2>Github link</h2>
+<p><a href = "https://github.com/mansipatel/PythonWebServer.git">https://github.com/mansipatel/PythonWebServer.git</a></p>
+ 
+</div>
+<div class = container>
+    <div class="footer">
+      <p> Mansi Patel &copy; 2015</p>
+    </div>
+</div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+</body></html>
